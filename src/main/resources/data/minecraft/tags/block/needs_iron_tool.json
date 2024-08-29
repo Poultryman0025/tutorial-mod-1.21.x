@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values":
+  [
+    "tutorialmod:deepslate_ruby_ore"
+    "tutorialmod:ruby_ore"
+    "tutorialmod:nether_reactor_core"
+
+  ]
+}

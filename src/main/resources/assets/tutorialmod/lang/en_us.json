@@ -1,0 +1,31 @@
+{
+  "item.tutorialmod.ruby": "Ruby",
+  "item.tutorialmod.crystallized_honey": "crystallized honey",
+  "item.tutorialmod.horse_saddle": "Horse Saddle",
+  "item.tutorialmod.wrench": "Wrench",
+  "item.tutorialmod.copper_horn": "Copper Horn",
+
+  "instrument.tutorialmod.great_copper_horn": "Great Sky Falling",
+  "instrument.tutorialmod.old_copper_horn": "Old Hymn Resting",
+  "instrument.tutorialmod.pure_copper_horn": "Pure Water Desire",
+  "instrument.tutorialmod.mumble_copper_horn": "Mumble Fire Memory",
+  "instrument.tutorialmod.dry_copper_horn": "Dry Urge Anger",
+  "instrument.tutorialmod.clear_copper_horn": "Clear Temper Journey",
+  "instrument.tutorialmod.fresh_copper_horn": "Fresh Nest Thought",
+  "instrument.tutorialmod.secret_copper_horn": "Secret Lake Tear",
+  "instrument.tutorialmod.fearless_copper_horn": "Fearless River Gift",
+  "instrument.tutorialmod.sweet_copper_horn": "Sweet Moon Love",
+
+  "subtitles.item.copper_horn.play": "Copper Horn plays",
+
+  "block.tutorialmod.ruby_block": "Block of Ruby",
+  "block.tutorialmod.ruby_ore": "Ruby Ore",
+  "block.tutorialmod.deepslate_ruby_ore": "Deepslate Ruby Ore",
+  "block.tutorialmod.crystallized_honey_block": "Crystallized Honey Block",
+  "block.tutorialmod.nether_reactor_core": "Nether Reactor Core",
+  "block.tutorialmod.rose": "Rose",
+  "block.tutorialmod.cyan_flower": "Cyan Flower",
+  "block.tutorialmod.gear_cog": "Gear Cog",
+
+  "ItemGroup.tutorialmod.lost_items": "Lost Items"
+}

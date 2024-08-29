@@ -1,0 +1,23 @@
+{
+  "type": "minecraft_crafting_shaped",
+  "category": "misc",
+  "key":
+  {
+    "#":
+    {
+      "item": "tutorialmod:crystallized_honey_block",
+
+    }
+  },
+  "pattern":
+          [
+            "###",
+            "###",
+            "###"
+          ],
+  "result":
+  {
+    "count": 1,
+    "id": "tutorialmod:crystallized_honey_block"
+  }
+}
