@@ -1,0 +1,57 @@
+package net.poultryman.tutorialmod;
+
+import com.mojang.serialization.Codec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.poultryman.tutorialmod.registry.CopperHornRegistries;
+import net.minecraft.network.RegistryByteBuf;
+import net.minecraft.network.codec.PacketCodec;
+import net.minecraft.network.codec.PacketCodecs;
+import net.minecraft.registry.entry.RegistryElementCodec;
+import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.sound.SoundEvent;
+import net.minecraft.util.dynamic.Codecs;
+
+public record CopperHornInstrument(RegistryEntry<SoundEvent> bassSoundEvent, RegistryEntry<SoundEvent> harmonySoundEvent, RegistryEntry<SoundEvent> melodySoundEvent, int useDuration, float range) {
+    public static final Codec<CopperHornInstrument> CODEC = RecordCodecBuilder.create((instance) ->
+    {
+        return instance.group(SoundEvent.ENTRY_CODEC.fieldOf("bass_sound_event").forGetter(CopperHornInstrument::bassSoundEvent), SoundEvent.ENTRY_CODEC.fieldOf("harmony_sound_event").forGetter(CopperHornInstrument::harmonySoundEvent), SoundEvent.ENTRY_CODEC.fieldOf("melody_sound_event").forGetter(CopperHornInstrument::melodySoundEvent), Codecs.POSITIVE_INT.fieldOf("use_duration").forGetter(CopperHornInstrument::useDuration), Codecs.POSITIVE_FLOAT.fieldOf("range").forGetter(CopperHornInstrument::range)).apply(instance, CopperHornInstrument::new);
+    });
+    public static final PacketCodec<RegistryByteBuf, CopperHornInstrument> PACKET_CODEC;
+    public static final Codec<RegistryEntry<CopperHornInstrument>> ENTRY_CODEC;
+    public static final PacketCodec<RegistryByteBuf, RegistryEntry<CopperHornInstrument>> ENTRY_PACKET_CODEC;
+
+    public CopperHornInstrument(RegistryEntry<SoundEvent> bassSoundEvent, RegistryEntry<SoundEvent> harmonySoundEvent, RegistryEntry<SoundEvent> melodySoundEvent, int useDuration, float range) {
+        this.bassSoundEvent = bassSoundEvent;
+        this.harmonySoundEvent = harmonySoundEvent;
+        this.melodySoundEvent = melodySoundEvent;
+        this.useDuration = useDuration;
+        this.range = range;
+    }
+
+    public RegistryEntry<SoundEvent> bassSoundEvent() {
+        return this.bassSoundEvent;
+    }
+
+    public RegistryEntry<SoundEvent> harmonySoundEvent() {
+        return this.harmonySoundEvent;
+    }
+
+    public RegistryEntry<SoundEvent> melodySoundEvent() {
+        return this.melodySoundEvent;
+    }
+
+    public int useDuration() {
+        return this.useDuration;
+    }
+
+    public float range() {
+        return this.range;
+    }
+
+    static
+    {
+        PACKET_CODEC = PacketCodec.tuple(SoundEvent.ENTRY_PACKET_CODEC, CopperHornInstrument::bassSoundEvent, SoundEvent.ENTRY_PACKET_CODEC, CopperHornInstrument::harmonySoundEvent, SoundEvent.ENTRY_PACKET_CODEC, CopperHornInstrument::melodySoundEvent, PacketCodecs.VAR_INT, CopperHornInstrument::useDuration, PacketCodecs.FLOAT, CopperHornInstrument::range, CopperHornInstrument::new);
+        ENTRY_CODEC = RegistryElementCodec.of(CopperHornRegistries.INSTRUMENT_KEY, CODEC);
+        ENTRY_PACKET_CODEC = PacketCodecs.registryEntry(CopperHornRegistries.INSTRUMENT_KEY, PACKET_CODEC);
+    }
+}

@@ -1,0 +1,20 @@
+{
+  "mappings": {
+    "poultryman/tutorialmod/mixin/GoatHornItemInvoker": {
+      "getInstrument": "getInstrument(Lnet/minecraft/ItemStack;)Ljava/util/Optional;"
+    },
+    "poultryman/tutorialmod/mixin/datafixer/ItemStackComponentizationFixMixin": {
+      "fixStack": "Lnet/minecraft/datafixer;method_57211(Lnet/minecraft/datafixer/fix/ItemStackComponentizationFix$StackData;Lcom/mojang/serialization/Dynamic;)V"
+    }
+  },
+  "data": {
+    "named:intermediary": {
+      "poultryman/tutorialmod/mixin/GoatHornItemInvoker": {
+        "getInstrument": "getInstrument(Lnet/minecraft/ItemStack;)Ljava/util/Optional;"
+      },
+      "poultryman/tutorialmod/mixin/datafixer/ItemStackComponentizationFixMixin": {
+        "fixStack": "Lnet/minecraft/datafixer;method_57211(Lnet/minecraft/datafixer/fix/ItemStackComponentizationFix$StackData;Lcom/mojang/serialization/Dynamic;)V"
+      }
+    }
+  }
+}
